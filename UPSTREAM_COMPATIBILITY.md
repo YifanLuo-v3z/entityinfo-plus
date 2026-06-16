@@ -454,6 +454,14 @@ These mixins are still required for addon-specific behavior or bug fixes:
   initializes and resets its rotation state defensively, covering the null
   rotation smoothing guard that previously required the addon patch.
 
+## 1.6.105 Bed Render Performance Pass
+
+- `Bed Render` no longer rescans the whole configured block radius in one go.
+  It now keeps per-chunk bed caches and refreshes only a small batch of chunks
+  each scan interval, which removes the worst periodic render-thread spikes.
+- Cached bed boxes are now skipped when they are outside the active camera
+  frustum, reducing blur/fill/outline cost in dense village or base scenes.
+
 ## Future Audit Checklist
 
 - Recheck upstream `NameTags` before changing `MixinNameTags`.

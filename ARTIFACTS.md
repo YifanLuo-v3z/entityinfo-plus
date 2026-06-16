@@ -49,3 +49,16 @@ Update notes:
   `26.1.x` commit `7792aca`.
 - Removed the addon `RotationUtils` compatibility mixin because the same null
   rotation-state hardening is now covered upstream.
+
+## 1.6.105
+
+Artifact:
+
+- `artifacts/1.6.105/entityinfo-addon-1.6.105.jar`
+
+Update notes:
+
+- Reworked `Bed Render` scanning to cache beds by chunk and refresh them in
+  small chunk batches instead of rescanning the full radius in one render pass.
+- Added frustum-aware bed rendering so off-screen cached beds no longer keep
+  paying blur/fill/outline render cost every frame.
