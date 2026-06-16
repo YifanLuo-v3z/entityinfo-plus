@@ -29,7 +29,7 @@ cd C:\Users\Administrator\Desktop\EntityInfo-Addon-Handoff\source\entityinfo-add
 
 主运行时 Fabric jar：
 
-`build\libs\entityinfo-addon-1.6.105.jar`
+`build\libs\entityinfo-addon-1.6.106.jar`
 
 默认 `build` 任务只产出运行时 Fabric addon jar，不再默认维护 sources jar、桌面交接包或其他额外打包目录。
 

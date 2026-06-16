@@ -29,7 +29,7 @@ Run a dev client:
 
 Main Fabric jar:
 
-`build\libs\entityinfo-addon-1.6.105.jar`
+`build\libs\entityinfo-addon-1.6.106.jar`
 
 The default `build` task only produces the runtime Fabric addon jar. Sources
 jar generation, root-level `artifacts`, and desktop handoff staging folders are

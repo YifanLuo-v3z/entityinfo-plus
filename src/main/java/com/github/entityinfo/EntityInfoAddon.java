@@ -2,6 +2,7 @@ package com.github.entityinfo;
 
 import com.github.entityinfo.modules.ArmorHudPlus;
 import com.github.entityinfo.modules.BedRender;
+import com.github.entityinfo.modules.CriticalsPlus;
 import com.github.entityinfo.modules.CrystalChams;
 import com.github.entityinfo.modules.DroppedItemHUD;
 import com.github.entityinfo.modules.ElytraBounce;
@@ -41,6 +42,7 @@ public final class EntityInfoAddon extends EpsilonAddon {
         );
         registerModule(ArmorHudPlus.INSTANCE);
         registerModule(BedRender.INSTANCE);
+        registerModule(CriticalsPlus.INSTANCE);
         registerModule(CrystalChams.INSTANCE);
         registerModule(DroppedItemHUD.INSTANCE);
         registerModule(ElytraBounce.INSTANCE);

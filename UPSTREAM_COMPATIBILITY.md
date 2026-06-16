@@ -462,6 +462,14 @@ These mixins are still required for addon-specific behavior or bug fixes:
 - Cached bed boxes are now skipped when they are outside the active camera
   frustum, reducing blur/fill/outline cost in dense village or base scenes.
 
+## 1.6.106 Criticals+ Port
+
+- Added a new addon combat module, `Criticals+`, ported from Alien-Nightly and
+  adapted to Epsilon's Fabric event bus plus packet helpers.
+- The port uses a narrow accessor mixin for `ServerboundInteractPacket` so the
+  attack target and action type can be read safely without rewriting Epsilon's
+  base attack flow.
+
 ## Future Audit Checklist
 
 - Recheck upstream `NameTags` before changing `MixinNameTags`.

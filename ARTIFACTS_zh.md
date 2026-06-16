@@ -53,3 +53,14 @@
 
 - 重写了 `Bed Render` 的扫描路径，改为按区块缓存并分批刷新，不再在单次渲染刷新里全量重扫整个范围。
 - 为床渲染增加了基于视锥的过滤，屏幕外的缓存床不会继续承担模糊、填充和描边的每帧开销。
+
+## 1.6.106
+
+产物：
+
+- `artifacts/1.6.106/entityinfo-addon-1.6.106.jar`
+
+更新内容：
+
+- 将 Alien-Nightly 的 `Criticals+` 移植为本 addon 的新 Combat 模块。
+- 加入多种发包暴击模式，包括 `OldNCP`、`Strict`、`NCP`、`NewNCP`、`Packet`、`BBTT`、`LowPacket`、`Grim`、`GrimCC`、`GrimV2`、`GrimV3` 和 `New2b2t`。

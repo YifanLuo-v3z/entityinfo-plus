@@ -4,6 +4,7 @@
   "package": "com.github.entityinfo.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
+    "AccessorServerboundInteractPacket",
     "MixinEndCrystalRenderer",
     "MixinNameTags",
     "MixinKillAura",

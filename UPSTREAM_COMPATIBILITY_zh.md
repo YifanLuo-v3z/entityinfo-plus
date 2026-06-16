@@ -64,6 +64,11 @@
 - `Bed Render` 不再在单次刷新时全量扫描整个配置范围，而是改为按区块缓存并分批刷新，从而降低渲染线程的周期性卡顿峰值。
 - 渲染阶段现在会跳过视锥外的床缓存，减少村庄或基地密集场景下的模糊、填充和描边开销。
 
+## 1.6.106 Criticals+ 移植
+
+- 新增了从 Alien-Nightly 移植而来的 `Criticals+` Combat 模块，并适配到 Epsilon 当前的 Fabric 事件总线与发包工具。
+- 该移植通过一个很窄的 `ServerboundInteractPacket` 访问器 mixin 读取攻击目标和动作类型，避免重写 Epsilon 原本的攻击主流程。
+
 ## 后续维护原则
 
 1. 只有在确认上游已完整覆盖相同行为后，才删除 addon 模块或 mixin。

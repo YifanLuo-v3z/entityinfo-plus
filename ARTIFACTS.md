@@ -62,3 +62,17 @@ Update notes:
   small chunk batches instead of rescanning the full radius in one render pass.
 - Added frustum-aware bed rendering so off-screen cached beds no longer keep
   paying blur/fill/outline render cost every frame.
+
+## 1.6.106
+
+Artifact:
+
+- `artifacts/1.6.106/entityinfo-addon-1.6.106.jar`
+
+Update notes:
+
+- Ported `Criticals+` from Alien-Nightly into the addon as a new Fabric combat
+  module.
+- Added packet-based critical modes including `OldNCP`, `Strict`, `NCP`,
+  `NewNCP`, `Packet`, `BBTT`, `LowPacket`, `Grim`, `GrimCC`, `GrimV2`,
+  `GrimV3`, and `New2b2t`.
