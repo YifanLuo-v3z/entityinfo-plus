@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "EntityInfo Plus for Epsilon on Fabric. Includes armor HUD, crystal chams, dropped item HUD, item HUD, elytra bounce, shulker preview, xcarry, zoom and extends Epsilon NameTags with dropped item labels.",
+  "authors": [
+    "Codex"
+  ],
+  "contact": {},
+  "license": "All Rights Reserved",
+  "environment": "client",
+  "mixins": [
+    "entityinfo_addon.mixins.json"
+  ],
+  "entrypoints": {
+    "epsilon:addon": [
+      "com.github.entityinfo.fabric.EntityInfoFabricEntrypoint"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}",
+    "java": ">=25",
+    "fabric-api": "*",
+    "epsilon": ">=${epsilon_version}"
+  }
+}

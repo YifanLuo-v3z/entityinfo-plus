@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.entityinfo.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "MixinEndCrystalRenderer",
+    "MixinNameTags",
+    "MixinKillAura",
+    "MixinMaceAura",
+    "MixinAutoMend",
+    "MixinPacketMineCountdown",
+    "MixinPacketEat",
+    "MixinHandsView",
+    "MixinNoFall",
+    "MixinNoSlow",
+    "MixinGUIMove",
+    "MixinElytraFlightMode",
+    "MixinRotationUtils",
+    "MixinAbstractContainerScreen",
+    "MixinCameraZoom",
+    "MixinLocalPlayerXCarry"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

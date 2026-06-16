@@ -1,0 +1,12 @@
+.gradle/
+build/
+tmp/
+run/
+out/
+repo/
+.idea/
+.vscode/
+*.log
+libs/*.jar
+!libs/README.txt
+!libs/put_libs_here
