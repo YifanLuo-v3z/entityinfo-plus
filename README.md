@@ -1,48 +1,49 @@
 # EntityInfo Plus
 
-[English](README.md) | [简体中文](README_zh.md)
+[简体中文](README.md) | [English](README_en.md)
 
-Fabric-only addon for [NekoyaHouse/Epsilon](https://github.com/NekoyaHouse/Epsilon), targeting Minecraft `26.1.2` and upstream Epsilon `2026.6.3`.
+这是一个面向 [NekoyaHouse/Epsilon](https://github.com/NekoyaHouse/Epsilon) 的 Fabric 专用 addon，当前目标版本为 Minecraft `26.1.2`，上游 Epsilon `2026.6.3`。
 
-## Highlights
+## 功能概览
 
-- `Armor HUD+`: armor HUD with blur, shadows, slot backgrounds, and durability text
-- `Bed Render`: cached nearby bed rendering with fill, outline, blur, and scan controls
-- `Crystal Chams`: filled crystal rendering with scale, spin, float, and range controls
-- `Dropped Item HUD`: aggregated dropped-item HUD with sorting, filtering, and refresh caching
-- `Elytra Bounce`: elytra relaunch helper with dive/lift pitch tuning and debug lock options
-- `Feet Trap Air Render`: bottom-face helper render for Feet Trap support air
-- `Item HUD`: configurable tracked-item HUD with add/remove item settings and count overlays
-- `Shulker Viewer`: shulker and ender chest preview with sidebar, grouping, sorting, and nested inspection
-- `XCarry`: keeps the 2x2 crafting slots available
-- `Zoom`: smooth zoom with key requirement and camera FOV hooks
-- `NameTags` extension and compatibility mixins for `KillAura`, `MaceAura`, `PacketEat`, `NoFall`, `NoSlow`, and related Epsilon behavior fixes
+- `Armor HUD+`：可显示护甲、耐久、阴影、模糊和槽位背景的护甲 HUD
+- `Bed Render`：带缓存与扫描延迟控制的床高亮渲染
+- `Crystal Chams`：支持缩放、旋转、悬浮和范围控制的水晶填充渲染
+- `Dropped Item HUD`：支持聚合、排序、过滤和刷新缓存的掉落物 HUD
+- `Elytra Bounce`：带俯冲角、抬升角和调试锁视角选项的鞘翅弹跳辅助
+- `Feet Trap Air Render`：用于围脚支撑空气位置的底面辅助渲染
+- `Item HUD`：可自由增删追踪物品并显示数量的物品 HUD
+- `Shulker Viewer`：支持潜影盒和末影箱预览、侧边列表、堆叠统计、排序和嵌套查看
+- `XCarry`：保留 2x2 合成栏物品
+- `Zoom`：平滑缩放与 FOV 钩子
+- 以及对 `NameTags`、`KillAura`、`MaceAura`、`PacketEat`、`NoFall`、`NoSlow` 等 Epsilon 行为的兼容性修复
 
-## Documentation
+## 文档导航
 
+- [English README](README_en.md)
 - [Build Guide](BUILDING.md) | [构建说明](BUILDING_zh.md)
 - [Project Structure](PROJECT_STRUCTURE.md) | [项目结构](PROJECT_STRUCTURE_zh.md)
 - [Upstream Compatibility](UPSTREAM_COMPATIBILITY.md) | [上游兼容性说明](UPSTREAM_COMPATIBILITY_zh.md)
 - [Build Artifacts](ARTIFACTS.md) | [构建产物记录](ARTIFACTS_zh.md)
 
-## Compatibility
+## 兼容性
 
-- Minecraft: `26.1.2`
-- Fabric Loader: `0.19.2`
-- Fabric API: `0.150.0+26.1.2`
-- Upstream Epsilon: `2026.6.3`
-- Required local dependency jar: `libs/epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`
+- Minecraft：`26.1.2`
+- Fabric Loader：`0.19.2`
+- Fabric API：`0.150.0+26.1.2`
+- 上游 Epsilon：`2026.6.3`
+- 需要放入本地 `libs` 的依赖：`epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`
 
-## Quick Build
+## 快速构建
 
-1. Put the Epsilon Fabric jar in `libs/epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`.
-2. If the filename differs, update `epsilon_jar_name` in `gradle.properties`.
-3. Run `.\gradlew.bat --no-daemon clean build`.
-4. Use `.\gradlew.bat runClient` for in-game verification when needed.
+1. 将 Epsilon Fabric 依赖放入 `libs/epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`。
+2. 如果文件名不同，请同步修改 `gradle.properties` 中的 `epsilon_jar_name`。
+3. 运行 `.\gradlew.bat --no-daemon clean build`。
+4. 如需游戏内验证，可运行 `.\gradlew.bat runClient`。
 
-## Notes
+## 说明
 
-- The addon uses Epsilon's custom Fabric entrypoint `epsilon:addon`.
-- The project is intentionally Fabric-only. Do not reintroduce NeoForge or split-loader packaging unless explicitly required.
-- The default `build` task only produces the runtime addon jar.
-- Released jars tracked in Git are stored under versioned folders in `artifacts/`.
+- 该 addon 使用 Epsilon 自定义的 Fabric 入口 `epsilon:addon`。
+- 本项目明确保持为 Fabric-only，不再默认维护 NeoForge 或多加载器拆分结构。
+- 默认 `build` 任务只输出运行时 addon jar。
+- 需要随仓库保留的正式构建产物会放在 `artifacts/` 的版本目录中。
