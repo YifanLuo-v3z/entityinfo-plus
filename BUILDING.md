@@ -1,5 +1,7 @@
 # Build And Verify
 
+[English](BUILDING.md) | [简体中文](BUILDING_zh.md)
+
 ## 1. Prepare Dependency
 
 Put the Epsilon 2026.6.3 Fabric jar at:

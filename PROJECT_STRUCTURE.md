@@ -1,28 +1,35 @@
-# EntityInfo Plus Fabric Project Structure
+# EntityInfo Plus Project Structure
+
+[English](PROJECT_STRUCTURE.md) | [简体中文](PROJECT_STRUCTURE_zh.md)
 
 ## Root
 
-- `build.gradle`: Fabric Loom build for the runtime Fabric addon jar
+- `build.gradle`: Fabric Loom build for the runtime addon jar
 - `gradle.properties`: addon version, Minecraft/Fabric versions, required Epsilon version, and local Epsilon jar name
 - `settings.gradle`
-- `UPSTREAM_COMPATIBILITY.md`: Fabric-only upstream audit and retention notes
-- `libs/epsilon-fabric-26.1.2.jar`: required local dependency
+- `README.md` / `README_zh.md`: repository landing pages
+- `BUILDING.md` / `BUILDING_zh.md`: build and verification notes
+- `ARTIFACTS.md` / `ARTIFACTS_zh.md`: versioned jar archive log
+- `UPSTREAM_COMPATIBILITY.md` / `UPSTREAM_COMPATIBILITY_zh.md`: upstream audit notes
+- `libs/epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`: required local Epsilon dependency
 
 ## Java Sources
 
 - `src/main/java/com/github/entityinfo/EntityInfoAddon.java`: addon registration and module list
 - `src/main/java/com/github/entityinfo/fabric/EntityInfoFabricEntrypoint.java`: Fabric entrypoint bridge
 - `src/main/java/com/github/entityinfo/modules/`: addon modules
-- `src/main/java/com/github/entityinfo/gui/ShulkerPreviewScreen.java`: preview screen for shulker and ender chest contents
-- `src/main/java/com/github/entityinfo/mixin/`: mixins for Epsilon extensions and behavior fixes
+- `src/main/java/com/github/entityinfo/gui/ShulkerPreviewScreen.java`: standalone container preview screen
+- `src/main/java/com/github/entityinfo/mixin/`: Epsilon extension and compatibility mixins
 - `src/main/java/com/github/entityinfo/utils/render/EntityRenderUtils.java`: dropped-item collection, formatting, caching, and frustum helpers
 
 ## Module Classes
 
 - `ArmorHudPlus.java`
+- `BedRender.java`
 - `CrystalChams.java`
 - `DroppedItemHUD.java`
 - `ElytraBounce.java`
+- `FeetTrapAirRender.java`
 - `ItemHud.java`
 - `ShulkerViewer.java`
 - `XCarry.java`
@@ -31,20 +38,20 @@
 ## Mixins
 
 - `MixinAbstractContainerScreen.java`
+- `MixinAutoMend.java`
 - `MixinCameraZoom.java`
 - `MixinElytraFlightMode.java`
 - `MixinEndCrystalRenderer.java`
-- `MixinAutoMend.java`
 - `MixinGUIMove.java`
 - `MixinHandsView.java`
 - `MixinKillAura.java`
 - `MixinLocalPlayerXCarry.java`
+- `MixinMaceAura.java`
 - `MixinNameTags.java`
 - `MixinNoFall.java`
 - `MixinNoSlow.java`
 - `MixinPacketEat.java`
 - `MixinPacketMineCountdown.java`
-- `MixinRotationUtils.java`
 
 ## Resources
 

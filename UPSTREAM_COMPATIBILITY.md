@@ -1,5 +1,7 @@
 # Upstream Compatibility Notes
 
+[English](UPSTREAM_COMPATIBILITY.md) | [简体中文](UPSTREAM_COMPATIBILITY_zh.md)
+
 This project is intentionally Fabric-only. Do not reintroduce NeoForge,
 Architectury, split-loader source sets, or desktop handoff packaging unless the
 maintainer explicitly asks for them again.

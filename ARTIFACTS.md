@@ -1,5 +1,7 @@
 # Build Artifacts
 
+[English](ARTIFACTS.md) | [简体中文](ARTIFACTS_zh.md)
+
 This repository keeps completed Fabric addon build outputs under `artifacts/`.
 
 Rules for future updates:
