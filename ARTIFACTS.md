@@ -107,3 +107,18 @@ Update notes:
 - `XCarry` now keeps a short inventory-screen grace window so the crafting-slot
   close packet is still cancelled when the inventory UI closes and the packet is
   sent on the following tick.
+
+## 1.6.109
+
+Artifact:
+
+- `artifacts/1.6.109/entityinfo-addon-1.6.109.jar`
+
+Update notes:
+
+- Continued the overlap pass with Alien's HUD modules by upgrading
+  `Dropped Item HUD` from a plain text list into a styled HUD.
+- Added optional item icons, background, rounded corners, blur, and drop shadow
+  controls to `Dropped Item HUD`.
+- Tightened the HUD cache so layout-affecting option changes refresh immediately
+  instead of waiting for the next entity scan delay.

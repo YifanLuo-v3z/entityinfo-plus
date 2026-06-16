@@ -102,6 +102,7 @@ public final class EntityRenderUtils {
                     mergeKey.hashCode(),
                     getDroppedItemBaseName(stack),
                     entry.typeName(),
+                    stack.copyWithCount(1),
                     stack.getCount(),
                     entry.distance()
                 ));
@@ -112,6 +113,7 @@ public final class EntityRenderUtils {
                 existingEntry.mergeKey(),
                 existingEntry.displayName(),
                 existingEntry.typeName(),
+                existingEntry.previewStack(),
                 existingEntry.count() + stack.getCount(),
                 Math.min(existingEntry.distance(), entry.distance())
             ));
@@ -166,6 +168,7 @@ public final class EntityRenderUtils {
         int mergeKey,
         String displayName,
         String typeName,
+        ItemStack previewStack,
         int count,
         double distance
     ) {
