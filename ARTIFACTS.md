@@ -76,3 +76,34 @@ Update notes:
 - Added packet-based critical modes including `OldNCP`, `Strict`, `NCP`,
   `NewNCP`, `Packet`, `BBTT`, `LowPacket`, `Grim`, `GrimCC`, `GrimV2`,
   `GrimV3`, and `New2b2t`.
+
+## 1.6.107
+
+Artifact:
+
+- `artifacts/1.6.107/entityinfo-addon-1.6.107.jar`
+
+Update notes:
+
+- Reworked `Zoom` with Alien-inspired timed easing, including new `Animation
+  Mode`, `Animation Time`, and `Ease` controls while keeping the original smooth
+  path available.
+- Patched upstream `Block Highlight` to render real voxel shapes instead of
+  full cubes, so slabs and other partial blocks no longer highlight as complete
+  blocks.
+- Added Alien-style crystal animation controls with `Spin Sync`,
+  `Bounce Height`, and `Y Offset`, and exposed `Corner Radius` for `Item HUD`.
+
+## 1.6.108
+
+Artifact:
+
+- `artifacts/1.6.108/entityinfo-addon-1.6.108.jar`
+
+Update notes:
+
+- Extended the Alien-inspired optimization pass beyond the original render
+  modules by hardening `XCarry` around inventory-close timing.
+- `XCarry` now keeps a short inventory-screen grace window so the crafting-slot
+  close packet is still cancelled when the inventory UI closes and the packet is
+  sent on the following tick.

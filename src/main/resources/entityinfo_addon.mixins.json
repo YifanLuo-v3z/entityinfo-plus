@@ -13,6 +13,7 @@
     "MixinPacketMineCountdown",
     "MixinPacketEat",
     "MixinHandsView",
+    "MixinBlockHighlightShape",
     "MixinNoFall",
     "MixinNoSlow",
     "MixinGUIMove",

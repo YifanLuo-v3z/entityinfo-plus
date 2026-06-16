@@ -43,7 +43,10 @@ public final class CrystalChams extends Module {
     private final BoolSetting frustumCulling = boolSetting("Frustum Culling", true).group(sgGeneral);
     private final DoubleSetting scale = doubleSetting("Scale", 1.0D, 0.25D, 4.0D, 0.05D).group(sgAnimation);
     private final DoubleSetting spinSpeed = doubleSetting("Spin Speed", 1.0D, 0.0D, 4.0D, 0.05D).group(sgAnimation);
+    private final BoolSetting spinSync = boolSetting("Spin Sync", false).group(sgAnimation);
+    private final DoubleSetting bounceHeight = doubleSetting("Bounce Height", 1.0D, 0.0D, 3.0D, 0.05D).group(sgAnimation);
     private final DoubleSetting floatSpeed = doubleSetting("Float Speed", 1.0D, 0.0D, 4.0D, 0.05D).group(sgAnimation);
+    private final DoubleSetting yOffset = doubleSetting("Y Offset", 0.0D, -1.0D, 1.0D, 0.05D).group(sgAnimation);
     private final BoolSetting filled = boolSetting("Filled", true).group(sgFill);
     private final ColorSetting fillColor = colorSetting("Fill Color", new Color(133, 255, 200, 63), true, filled::getValue).group(sgFill);
 
@@ -87,7 +90,7 @@ public final class CrystalChams extends Module {
             double renderX = lerp(crystal.xOld, crystal.getX(), partialTick) - cameraPosition.x;
             double renderY = lerp(crystal.yOld, crystal.getY(), partialTick) - cameraPosition.y;
             double renderZ = lerp(crystal.zOld, crystal.getZ(), partialTick) - cameraPosition.z;
-            float ageInTicks = crystal.time + partialTick;
+            float ageInTicks = spinSync.getValue() ? mc.level.getGameTime() + partialTick : crystal.time + partialTick;
 
             poseStack.pushPose();
             poseStack.translate((float) renderX, (float) renderY, (float) renderZ);
@@ -124,6 +127,7 @@ public final class CrystalChams extends Module {
         setupCrystalModel(model, crystal, ageInTicks);
 
         poseStack.pushPose();
+        poseStack.translate(0.0F, yOffset.getValue().floatValue(), 0.0F);
         poseStack.scale(2.0F * scale.getValue().floatValue(), 2.0F * scale.getValue().floatValue(), 2.0F * scale.getValue().floatValue());
         poseStack.translate(0.0F, -0.5F, 0.0F);
 
@@ -140,7 +144,9 @@ public final class CrystalChams extends Module {
 
     private void setupCrystalModel(EndCrystalModel model, EndCrystal crystal, float ageInTicks) {
         float spin = ageInTicks * 3.0F * spinSpeed.getValue().floatValue();
-        float verticalOffset = getCrystalYOffset(ageInTicks * floatSpeed.getValue().floatValue()) * 8.0F;
+        float verticalOffset = getCrystalYOffset(ageInTicks * floatSpeed.getValue().floatValue())
+            * 8.0F
+            * bounceHeight.getValue().floatValue();
 
         model.resetPose();
         model.base.visible = crystal.showsBottom();

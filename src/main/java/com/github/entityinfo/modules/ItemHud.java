@@ -83,6 +83,7 @@ public final class ItemHud extends HudModule {
     private final BoolSetting includeCraftingSlots = boolSetting("Include Crafting Slots", true).group(sgSources);
     private final DoubleSetting scale = doubleSetting("Scale", 1.0D, 0.5D, 2.0D, 0.1D).group(sgAppearance);
     private final EnumSetting<LayoutMode> layoutMode = enumSetting("Layout", LayoutMode.Horizontal).group(sgAppearance);
+    private final DoubleSetting cornerRadius = doubleSetting("Corner Radius", 4.0D, 0.0D, 14.0D, 0.5D).group(sgAppearance);
     private final BoolSetting textShadow = boolSetting("Text Shadow", true).group(sgAppearance);
     private final BoolSetting showBackground = boolSetting("Background", false).group(sgAppearance);
     private final BoolSetting showSlots = boolSetting("Slots", false).group(sgAppearance);
@@ -129,8 +130,8 @@ public final class ItemHud extends HudModule {
         float textGap = TEXT_GAP * renderScale;
         float paddingX = visualPaddingX(renderScale);
         float paddingY = visualPaddingY(renderScale);
-        float backgroundRadius = 4.0F * renderScale;
-        float slotRadius = 2.0F * renderScale;
+        float backgroundRadius = cornerRadius.getValue().floatValue() * renderScale;
+        float slotRadius = Math.min(backgroundRadius, 3.0F * renderScale);
 
         List<RenderEntry> renderEntries = buildRenderEntries(entries, renderScale, slotSize, textGap, paddingX, paddingY);
         LayoutMetrics layout = computeLayout(renderEntries, renderScale, slotSize, entryGap, paddingX, paddingY);
