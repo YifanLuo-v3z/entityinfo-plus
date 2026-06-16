@@ -435,6 +435,15 @@ These mixins are still required for addon-specific behavior or bug fixes:
   and other screen right-click interactions usable during elytra flight without
   changing in-world flight behavior.
 
+## 1.6.103 Elytra Bounce Dual Pitch Settings
+
+- `Elytra Bounce` now exposes separate `Dive Pitch` and `Lift Pitch` settings
+  instead of a single shared pitch slider.
+- While fall flying, the module keeps the downward dive angle during descent
+  and automatically switches to the upward lift angle whenever the player is
+  rising, making bounce tuning more controllable without changing relaunch,
+  sprint, or other control logic.
+
 ## Future Audit Checklist
 
 - Recheck upstream `NameTags` before changing `MixinNameTags`.

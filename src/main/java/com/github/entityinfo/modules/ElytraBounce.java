@@ -33,7 +33,8 @@ public final class ElytraBounce extends Module {
     private final SettingGroup sgSafety = settingGroup("Safety");
     private final SettingGroup sgDebug = settingGroup("Debug");
 
-    private final DoubleSetting pitch = doubleSetting("Pitch", 85.0D, -90.0D, 90.0D, 1.0D).group(sgGeneral);
+    private final DoubleSetting divePitch = doubleSetting("Dive Pitch", 85.0D, -90.0D, 90.0D, 1.0D).group(sgGeneral);
+    private final DoubleSetting liftPitch = doubleSetting("Lift Pitch", -35.0D, -90.0D, 90.0D, 1.0D).group(sgGeneral);
     private final DoubleSetting relaunchDelay = doubleSetting("Relaunch Delay", 0.5D, 0.0D, 5.0D, 0.05D).group(sgGeneral);
     private final BoolSetting instantStart = boolSetting("Instant Start", true).group(sgGeneral);
     private final BoolSetting autoJump = boolSetting("Auto Jump", true).group(sgControl);
@@ -107,7 +108,7 @@ public final class ElytraBounce extends Module {
             return;
         }
 
-        event.setPitch(pitch.getValue().floatValue());
+        event.setPitch(getFlightPitch());
     }
 
     @EventHandler
@@ -229,7 +230,7 @@ public final class ElytraBounce extends Module {
         }
 
         if (debugViewLock.getValue()) {
-            float lockedPitch = pitch.getValue().floatValue();
+            float lockedPitch = getFlightPitch();
             mc.player.setXRot(lockedPitch);
             mc.player.xRotO = lockedPitch;
         }
@@ -258,6 +259,18 @@ public final class ElytraBounce extends Module {
     private boolean hasElytraEquipped() {
         ItemStack chestStack = mc.player.getItemBySlot(EquipmentSlot.CHEST);
         return LivingEntity.canGlideUsing(chestStack, EquipmentSlot.CHEST);
+    }
+
+    private float getFlightPitch() {
+        return shouldUseLiftPitch()
+            ? liftPitch.getValue().floatValue()
+            : divePitch.getValue().floatValue();
+    }
+
+    private boolean shouldUseLiftPitch() {
+        return mc.player != null
+            && mc.player.isFallFlying()
+            && mc.player.getDeltaMovement().y > 0.015D;
     }
 
     private boolean hasRelaunchDelayElapsed() {

@@ -22,3 +22,15 @@ Update notes:
   client screen is open.
 - Kept the earlier `1.6.101` food-use and movement fixes intact, including
   elytra-flight eating, GUI Move key sync, and NoSlow's `Only Ground` option.
+
+## 1.6.103
+
+Artifact:
+
+- `artifacts/1.6.103/entityinfo-addon-1.6.103.jar`
+
+Update notes:
+
+- Added separate `Dive Pitch` and `Lift Pitch` settings to `Elytra Bounce`.
+- `Elytra Bounce` now uses the dive angle while descending and automatically
+  swaps to the lift angle while the player is rising during fall flying.

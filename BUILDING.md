@@ -27,7 +27,7 @@ Run a dev client:
 
 Main Fabric jar:
 
-`build\libs\entityinfo-addon-1.6.102.jar`
+`build\libs\entityinfo-addon-1.6.103.jar`
 
 The default `build` task only produces the runtime Fabric addon jar. Sources
 jar generation, root-level `artifacts`, and desktop handoff staging folders are
@@ -72,6 +72,7 @@ no longer maintained by default.
 35. Verify `GUI Move` keeps elytra flight responsive while an inventory screen is open, including custom movement keybinds.
 36. Verify `No Slow` exposes `Only Ground`; when enabled, slowdown bypass and GrimC0F state are skipped/reset while the player is airborne.
 37. Verify while `Elytra Fly` is active, opening Epsilon module UI screens still allows right-click expansion and other UI right-click interactions instead of having them cancelled by the flight module.
+38. Verify `Elytra Bounce` now exposes separate `Dive Pitch` and `Lift Pitch` settings, uses `Dive Pitch` while descending, and switches to `Lift Pitch` while the player is rising during fall flying.
 
 ## 5. Mixin Note
 
