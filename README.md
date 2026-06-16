@@ -27,3 +27,5 @@ Fabric-only 26.1.2 addon for Epsilon 2026.6.2 on Minecraft 26.1.2.
 - The addon uses Epsilon's custom Fabric entrypoint `epsilon:addon`.
 - This project now depends on Mixins in addition to Epsilon render events.
 - The default `build` task only produces the runtime Fabric addon jar. Handoff packaging, sources jar generation, and root-level artifact staging are no longer maintained by default.
+- Completed release jars that should stay in Git are copied into versioned
+  folders under `artifacts/`. See `ARTIFACTS.md` for the upload/update log.
