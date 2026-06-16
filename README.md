@@ -1,6 +1,6 @@
 # EntityInfo Plus
 
-Fabric-only 26.1.2 addon for Epsilon 2026.6.2 on Minecraft 26.1.2.
+Fabric-only 26.1.2 addon for Epsilon 2026.6.3 on Minecraft 26.1.2.
 
 ## Features
 
@@ -13,11 +13,11 @@ Fabric-only 26.1.2 addon for Epsilon 2026.6.2 on Minecraft 26.1.2.
 - `XCarry`: keeps the 2x2 crafting slots available by preventing the normal inventory close path
 - `Zoom`: smooth zoom with optional require-key behavior and camera FOV hooks
 - `NameTags` extension: adds dropped-item labels and related translation strings to Epsilon's built-in module
-- Additional Epsilon fixes via mixins for `KillAura`, `HandsView`, `PacketEat`, and rotation smoothing
+- Additional Epsilon fixes via mixins for `KillAura`, `HandsView`, `PacketEat`, `MaceAura`, `NoFall`, `NoSlow`, and related compatibility paths
 
 ## Build
 
-1. Put the Epsilon 2026.6.2 Fabric jar in `libs/epsilon-fabric-26.1.2.jar`.
+1. Put the Epsilon 2026.6.3 Fabric jar in `libs/epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`.
 2. If the filename differs, update `epsilon_jar_name` in `gradle.properties`.
 3. Run `.\gradlew.bat --no-daemon clean build`.
 4. Use `.\gradlew.bat runClient` for in-game verification.

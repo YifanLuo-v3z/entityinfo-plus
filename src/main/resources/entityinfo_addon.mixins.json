@@ -16,7 +16,6 @@
     "MixinNoSlow",
     "MixinGUIMove",
     "MixinElytraFlightMode",
-    "MixinRotationUtils",
     "MixinAbstractContainerScreen",
     "MixinCameraZoom",
     "MixinLocalPlayerXCarry"

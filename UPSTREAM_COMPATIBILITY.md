@@ -7,15 +7,15 @@ maintainer explicitly asks for them again.
 ## Baseline
 
 - Epsilon branch: `26.1.x`
-- Checked upstream commit: `fbd2c0a`
-- Required Epsilon version: `2026.6.2`
+- Checked upstream commit: `7792aca`
+- Required Epsilon version: `2026.6.3`
 - Minecraft version: `26.1.2`
 - Fabric Loader: `0.19.2`
 - Fabric API: `0.150.0+26.1.2`
 
 The local dependency is expected at:
 
-`libs/epsilon-fabric-26.1.2.jar`
+`libs/epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`
 
 ## Retained Addon Modules
 
@@ -58,8 +58,6 @@ These mixins are still required for addon-specific behavior or bug fixes:
 - `MixinNoSlow`: clears stale GrimC0F packet state during login/common ping
   handling so a previous world session cannot cancel the login pong or send a
   movement packet before the client connection is available.
-- `MixinRotationUtils`: guards missing rotation state and zero-delta movement
-  in smooth/move helpers so upstream rotation math cannot emit NaN values.
 - `MixinAbstractContainerScreen`: drives container hover/sidebar previews.
 - `MixinCameraZoom`: applies zoom FOV changes.
 - `MixinEndCrystalRenderer`: supports crystal chams rendering. It cancels the
@@ -443,6 +441,16 @@ These mixins are still required for addon-specific behavior or bug fixes:
   and automatically switches to the upward lift angle whenever the player is
   rising, making bounce tuning more controllable without changing relaunch,
   sprint, or other control logic.
+
+## 1.6.104 Epsilon 2026.6.3 Baseline Refresh
+
+- Rebased the addon against upstream `Epsilon` `26.1.x` commit `7792aca`,
+  which corresponds to release version `2026.6.3`.
+- Updated the local Fabric dependency baseline to
+  `epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`.
+- Removed `MixinRotationUtils` because upstream `RotationManager` now
+  initializes and resets its rotation state defensively, covering the null
+  rotation smoothing guard that previously required the addon patch.
 
 ## Future Audit Checklist
 

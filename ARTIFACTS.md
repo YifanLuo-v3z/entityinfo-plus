@@ -34,3 +34,16 @@ Update notes:
 - Added separate `Dive Pitch` and `Lift Pitch` settings to `Elytra Bounce`.
 - `Elytra Bounce` now uses the dive angle while descending and automatically
   swaps to the lift angle while the player is rising during fall flying.
+
+## 1.6.104
+
+Artifact:
+
+- `artifacts/1.6.104/entityinfo-addon-1.6.104.jar`
+
+Update notes:
+
+- Updated the addon baseline to upstream `Epsilon 2026.6.3` on branch
+  `26.1.x` commit `7792aca`.
+- Removed the addon `RotationUtils` compatibility mixin because the same null
+  rotation-state hardening is now covered upstream.

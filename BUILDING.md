@@ -2,9 +2,9 @@
 
 ## 1. Prepare Dependency
 
-Put the Epsilon 2026.6.2 Fabric jar at:
+Put the Epsilon 2026.6.3 Fabric jar at:
 
-`libs\epsilon-fabric-26.1.2.jar`
+`libs\epsilon-fabric-26.1.2-2026.6.3-7792aca.jar`
 
 If the filename differs, update `epsilon_jar_name` in [gradle.properties](C:\Users\Administrator\Desktop\EntityInfo-Addon-Handoff\source\entityinfo-addon-1.5.4-project\gradle.properties).
 
@@ -27,7 +27,7 @@ Run a dev client:
 
 Main Fabric jar:
 
-`build\libs\entityinfo-addon-1.6.103.jar`
+`build\libs\entityinfo-addon-1.6.104.jar`
 
 The default `build` task only produces the runtime Fabric addon jar. Sources
 jar generation, root-level `artifacts`, and desktop handoff staging folders are
@@ -73,6 +73,7 @@ no longer maintained by default.
 36. Verify `No Slow` exposes `Only Ground`; when enabled, slowdown bypass and GrimC0F state are skipped/reset while the player is airborne.
 37. Verify while `Elytra Fly` is active, opening Epsilon module UI screens still allows right-click expansion and other UI right-click interactions instead of having them cancelled by the flight module.
 38. Verify `Elytra Bounce` now exposes separate `Dive Pitch` and `Lift Pitch` settings, uses `Dive Pitch` while descending, and switches to `Lift Pitch` while the player is rising during fall flying.
+39. Verify the addon loads correctly against upstream `Epsilon 2026.6.3`, and that removing `MixinRotationUtils` does not reintroduce rotation-related NaN or null-state crashes during login, respawn, or combat module rotation smoothing.
 
 ## 5. Mixin Note
 
